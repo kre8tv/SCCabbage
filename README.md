@@ -154,7 +154,7 @@ use_frameworks!
 target 'MyApp' do
   # your other pod
   # ...
-  pod 'VFCabbage'
+  pod 'SCCabbage', :git => 'https://github.com/kre8tv/SCCabbage'
 end
 ```
 
