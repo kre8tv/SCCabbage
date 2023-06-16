@@ -167,7 +167,7 @@ You can
 - Or add Cabbage as a submodule.
 
 ```
-$ git submodule add https://github.com/VideoFlint/Cabbage.git
+$ git submodule add https://github.com/kre8tv/SCCabbage
 ```
 
 ## Requirements
