@@ -15,14 +15,14 @@ Pod::Spec.new do |s|
 
     s.license = { :type => "MIT", :file => "LICENSE" }
 
-    s.homepage = 'https://github.com/VideoFlint/Cabbage'
+    s.homepage = 'https://github.com/kre8tv/SCCabbage'
 
     s.author = { 'Vito' => 'vvitozhang@gmail.com' }
 
     s.platform = :ios, '9.0'
     s.swift_version = "4.2"
 
-    s.source = { :git => 'https://github.com/VideoFlint/Cabbage.git', :tag => s.version.to_s }
+    s.source = { :git => 'https://github.com/kre8tv/SCCabbage.git', :tag => s.version.to_s }
     s.source_files = ['Cabbage/Sources/core/**/*.swift', 'Cabbage/Sources/**/*.swift']
     s.resource_bundles = { 'Cabbage' => 'Cabbage/Sources/Resource/*.mp4' }
 
