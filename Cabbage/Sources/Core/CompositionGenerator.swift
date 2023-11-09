@@ -47,7 +47,7 @@ public class CompositionGenerator {
         return imageGenerator
     }
     
-    public func buildExportSession(presetName: String) -> AVAssetExportSession? {
+    public func buildExportSession(presetName: String, animationTool: AVVideoCompositionCoreAnimationTool? = nil) -> AVAssetExportSession? {
         let composition = buildComposition()
         let exportSession = AVAssetExportSession.init(asset: composition, presetName: presetName)
         exportSession?.videoComposition = buildVideoComposition()
@@ -192,7 +192,7 @@ public class CompositionGenerator {
         return composition
     }
     
-    public func buildVideoComposition() -> AVVideoComposition? {
+    public func buildVideoComposition(animationTool: AVVideoCompositionCoreAnimationTool? = nil) -> AVVideoComposition? {
         if let videoComposition = self.videoComposition, !needRebuildVideoComposition {
             return videoComposition
         }
@@ -242,6 +242,7 @@ public class CompositionGenerator {
         videoComposition.renderSize = self.timeline.renderSize
         videoComposition.instructions = instructions
         videoComposition.customVideoCompositorClass = VideoCompositor.self
+        videoComposition.animationTool = animationTool
         self.videoComposition = videoComposition
         self.needRebuildVideoComposition = false
         return videoComposition
