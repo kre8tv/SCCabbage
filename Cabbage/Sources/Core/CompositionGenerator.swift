@@ -50,7 +50,7 @@ public class CompositionGenerator {
     public func buildExportSession(presetName: String, animationTool: AVVideoCompositionCoreAnimationTool? = nil) -> AVAssetExportSession? {
         let composition = buildComposition()
         let exportSession = AVAssetExportSession.init(asset: composition, presetName: presetName)
-        exportSession?.videoComposition = buildVideoComposition()
+        exportSession?.videoComposition = buildVideoComposition(animationTool: animationTool)
         exportSession?.audioMix = buildAudioMix()
         exportSession?.outputURL = {
             let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
