@@ -13,6 +13,12 @@ public struct ResourceTrackInfo {
     public var track: AVAssetTrack
     public var selectedTimeRange: CMTimeRange
     public var scaleToDuration: CMTime
+    
+    public init(track: AVAssetTrack, selectedTimeRange: CMTimeRange, scaleToDuration: CMTime) {
+        self.track = track
+        self.selectedTimeRange = selectedTimeRange
+        self.scaleToDuration = scaleToDuration
+    }
 }
 
 
@@ -99,7 +105,7 @@ open class Resource: NSObject, NSCopying, ResourceTrackInfoProvider {
     
     // MARK: - ResourceTrackInfoProvider
     
-    public func trackInfo(for type: AVMediaType, at index: Int) -> ResourceTrackInfo {
+    open func trackInfo(for type: AVMediaType, at index: Int) -> ResourceTrackInfo {
         let track = tracks(for: type)[index]
         let emptyDuration = CMTime(value: 1, 30)
         let emptyTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: emptyDuration)
